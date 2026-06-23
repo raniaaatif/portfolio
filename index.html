@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rania Atif | Front End Developer </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family
+  =DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'gold-light': '#d4af37',
+            'gold-dark': '#b8860b',
+            'deep-brown': '#1a120f',
+            'soft-cream': '#fcf6f0',
+          },
+          animation: {
+            "spin-slow":"spin 12s linear infinite",
+            "float":"float 4s ease-in-out infinite",
+            "pulse-ring":"pulseRing 2.5s ease-out infinite",
+            "blink":"blink 1s step-end infinite",
+          },
+          keyframes: {
+            float:{"0%,100%":{transform:"translateY(0px)"},"50%":{transform:"translateY(-14px)"}},
+            pulseRing:{"0%":{transform:"scale(1)",opacity:"0.8"},"100%":{transform:"scale(1.55)",opacity:"0"}},
+            blink:{"0%,100%":{opacity:"1"},"50%":{opacity:"0"}},
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{background:#1a120f; color:#fcf6f0; overflow-x:hidden; font-family:"DM Sans",sans-serif}
+    
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:#1a120f}
+    ::-webkit-scrollbar-thumb{background:#d4af37; border-radius:9999px}
+
+    .glass{background:rgba(62, 39, 35, 0.5); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(212, 175, 55, 0.15)}
+    .grad-text{background:linear-gradient(135deg,#fcf6f0 0%,#d4af37 50%,#b8860b 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
+
+    .grad-border{position:relative; border-radius:1rem}
+    .grad-border::before{content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px;
+      background:linear-gradient(135deg,rgba(212,175,55,0.3),rgba(184,134,11,0.3));
+      -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite:destination-out; mask-composite:exclude; pointer-events:none; transition:background .3s}
+    .grad-border:hover::before{background:linear-gradient(135deg,#d4af37,#b8860b)}
+
+    .glow-ring{box-shadow:0 0 0 3px #d4af37, 0 0 30px rgba(212, 175, 55, 0.4)}
+    .reveal{opacity:0; transform:translateY(36px); transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1; transform:translateY(0)}
+    
+    #typed-cursor{display:inline-block; color:#d4af37}
+    .section-heading::after{content:""; display:block; width:60px; height:3px; background:linear-gradient(90deg,#d4af37,#b8860b); border-radius:9999px; margin:10px auto 0}
+
+    .skill-pill{display:inline-block; padding:3px 10px; font-size:.72rem; font-weight:500; color:#d4af37;
+      background:rgba(212, 175, 55, 0.08); border:1px solid rgba(212, 175, 55, 0.3); border-radius:9999px}
+
+    .tl-container{position:relative; padding-left:2.5rem}
+    .tl-container::before{content:""; position:absolute; left:.75rem; top:0; bottom:0; width:2px; background:linear-gradient(180deg,#d4af37,#1a120f)}
+    .tl-dot{position:absolute; left:0; top:1.2rem; width:1.5rem; height:1.5rem; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #d4af37; background:#1a120f; box-shadow:0 0 12px rgba(212, 175, 55, 0.5)}
+    .tl-item{position:relative; margin-bottom:2rem}
+  </style>
+</head>
+<body>
+
+ <nav id="navbar" class="fixed top-0 inset-x-0 z-50 glass transition-all duration-300">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+     <a href="#hero" class="font-orbitron text-xl font-bold grad-text tracking-widest uppercase">Rania</a>
+     <ul class="hidden md:flex gap-8 text-sm font-medium text-soft-cream opacity-80">
+       <li><a href="#about" class="hover:text-gold-light transition-colors">About</a></li>
+       <li><a href="#skills" class="hover:text-gold-light transition-colors">Skills</a></li>
+       <li><a href="#experience" class="hover:text-gold-light transition-colors">Experience</a></li>
+       <li><a href="#projects" class="hover:text-gold-light transition-colors">Projects</a></li>
+       <li><a href="#contact" class="hover:text-gold-light transition-colors">Contact</a></li>
+     </ul>
+     <a href="https://flowcv.com/resume/wk7hc1svbg12" target="_blank" 
+     class="hidden md:inline-flex bg-gradient-to-r from-gold-light to-gold-dark text-deep-brown px-6 py-2 
+     rounded-full font-bold text-sm shadow-lg hover:scale-105 transition-all">Download CV</a>
+   </div>
+ </nav>
+
+ <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+   <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center w-full relative z-10">
+     <div class="reveal">
+       <span class="inline-block text-sm font-medium text-gold-light tracking-[4px] uppercase mb-4">Front End Developer</span>
+       <h1 class="font-orbitron text-5xl lg:text-7xl font-black leading-tight mb-4">
+         <span class="text-soft-cream">RANIA</span><br><span class="grad-text">ATIF</span>
+       </h1>
+       <div class="font-orbitron text-xl text-soft-cream opacity-80 mb-8 h-8">
+         <span id="typed-text"></span><span id="typed-cursor" class="animate-blink">|</span>
+       </div>
+       <div class="flex flex-wrap gap-4">
+         <a href="#projects" class="px-8 py-3 rounded-full font-bold text-sm bg-gradient-to-r from-gold-light to-gold-dark text-deep-brown shadow-lg hover:scale-105 transition-all">View My Work</a>
+         <div class="flex gap-5 items-center ml-4">
+            <a href="https://github.com/Raniaatif" target="_blank" class="text-soft-cream/60 hover:text-gold-light text-2xl transition-colors"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rania-atif-/" target="_blank" class="text-soft-cream/60 hover:text-gold-light text-2xl transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/201020323198" target="_blank" class="text-soft-cream/60 hover:text-green-500 text-2xl transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+         </div>
+       </div>
+     </div>
+     <div class="flex justify-center items-center reveal" style="transition-delay:.3s">
+       <div class="relative inline-block animate-float">
+         <div class="absolute inset-0 rounded-full animate-pulse-ring border-2 border-gold-light/40"></div>
+         <img src="profile.jpeg" alt="Rania" class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover glow-ring z-10 border-4 border-deep-brown" />
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <section id="about" class="py-24 bg-black/20">
+   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+     <div class="reveal">
+       <div class="glass grad-border rounded-2xl p-8 font-mono text-xs text-soft-cream/80 leading-relaxed shadow-2xl">
+         <div class="text-gold-light mb-4">// Rania_Profile.json</div>
+         <div><span class="text-gold-dark">"name"</span>: "Rania Atif Abdulhadi",</div>
+         <div><span class="text-gold-dark">"role"</span>: "Front End Developer",</div>
+         <div><span class="text-gold-dark">"program"</span>: "BIS",</div>
+         <div><span class="text-gold-dark">"focus"</span>: ["HTML","CSS","JavaScript","Web Design"]</div>
+       </div>
+     </div>
+     <div class="reveal" style="transition-delay:.2s">
+       <h2 class="font-orbitron text-3xl font-bold text-soft-cream mb-6 section-heading text-left">About <span class="grad-text">Me</span></h2>
+       <p class="text-soft-cream/70 leading-relaxed mb-8">
+        I am Rania Atif, a Front End Developer and BIS Student Passionate about creating modern, responsive, and user-friendly websites. I enjoy transforming ideas into
+         interactive web experiences using HTML, CSS, and JavaScript while continuously improving my design and development skills..
+       </p>
+       <div class="grid grid-cols-3 gap-4">
+         <div class="glass grad-border p-4 text-center">
+           <div class="font-orbitron text-xl font-bold grad-text">3+</div>
+           <div class="text-[10px] uppercase opacity-60">Project</div>
+         </div>
+         <div class="glass grad-border p-4 text-center">
+           <div class="font-orbitron text-xl font-bold grad-text">Front-End</div>
+           <div class="text-[10px] uppercase opacity-60">Developer</div>
+         </div>
+         <div class="glass grad-border p-4 text-center">
+           <div class="font-orbitron text-xl font-bold grad-text">HTML CSS JS</div>
+           <div class="text-[10px] uppercase opacity-60">Skills</div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <section id="skills" class="py-24">
+   <div class="max-w-4xl mx-auto px-6">
+     <div class="text-center mb-16 reveal">
+       <h2 class="font-orbitron text-3xl font-bold text-soft-cream section-heading inline-block">
+        Technical <span class="grad-text">Skills</span></h2>
+     </div>
+     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+       <div class="glass grad-border p-5 text-center reveal">
+         <i class="fa-solid fa-chart-bar text-2xl text-gold-light mb-3"></i>
+         <div class="font-orbitron text-xs font-bold text-soft-cream">HTML</div>
+       </div>
+       <div class="glass grad-border p-5 text-center reveal" style="transition-delay:.1s">
+         <i class="fa-solid fa-chart-line text-2xl text-gold-light mb-3"></i>
+         <div class="font-orbitron text-xs font-bold text-soft-cream">CSS</div>
+       </div>
+       <div class="glass grad-border p-5 text-center reveal" style="transition-delay:.2s">
+         <i class="fa-solid fa-file-excel text-2xl text-gold-light mb-3"></i>
+         <div class="font-orbitron text-xs font-bold text-soft-cream">JS</div>
+       </div>
+       <div class="glass grad-border p-5 text-center reveal" style="transition-delay:.3s">
+         <i class="fa-solid fa-database text-2xl text-gold-light mb-3"></i>
+         <div class="font-orbitron text-xs font-bold text-soft-cream">SQL</div>
+       </div>
+       <div class="glass grad-border p-5 text-center reveal" style="transition-delay:.4s">
+         <i class="fa-brands fa-python text-2xl text-gold-light mb-3"></i>
+         <div class="font-orbitron text-xs font-bold text-soft-cream">Python</div>
+       </div>
+       <div class="glass grad-border p-5 text-center reveal" style="transition-delay:.5s">
+         <i class="fa-solid fa-table-cells text-2xl text-gold-light mb-3"></i>
+         <div class="font-orbitron text-xs font-bold text-soft-cream">Excel</div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <section id="experience" class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+            <h2 class="font-orbitron text-3xl font-bold text-soft-cream section-heading inline-block">
+              Experience <span class="grad-text">Timeline</span></h2>
+        </div>
+        <div class="tl-container">
+            <div class="tl-item reveal">
+                <div class="tl-dot text-gold-light"><i class="fa-solid fa-graduation-cap text-[8px]"></i></div>
+                <div class="glass grad-border p-6 ml-4">
+                    <h3 class="font-orbitron text-sm font-bold text-soft-cream">Front End Developer</h3>
+                    <p class="text-xs text-gold-light font-bold mb-4"> 2025 – Present · Personal Projects & Training</p>
+                    <ul class="text-sm text-soft-cream/70 space-y-2">
+                        <li>• Building responsive and modern websites using HTML, CSS, and JavaScript.</li>
+
+                        <li>• Creating user-friendly interfaces and interactive web pages.</li>
+
+                        <li>• Developing personal and academic front-end projects.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+ <section id="projects" class="py-24 bg-black/10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+            <h2 class="font-orbitron text-3xl font-bold text-soft-cream section-heading inline-block">
+              Featured <span class="grad-text">Projects</span></h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass grad-border p-6 reveal hover:-translate-y-2 transition-transform">
+                <div class="h-40 bg-deep-brown rounded-lg mb-4 flex items-center justify-center border border-gold-light/20 overflow-hidden">
+                  <img src="shahrzan.png" alt="Energy Consumption Dashboard" class="rounded-lg object-cover h-full w-full" />
+                </div>
+                <h3 class="font-orbitron text-sm font-bold text-soft-cream mb-2">SHAHRZAN Website</h3>
+                <p class="text-xs text-soft-cream/60 mb-4">Modern restaurant website built using HTML, CSS, and JavaScript
+                   with responsive design and interactive sections.</p>
+                <div class="flex gap-2 flex-wrap mb-4">
+                    <span class="skill-pill">HTML</span>
+                    <span class="skill-pill">CSS</span>
+                    <span class="skill-pill">JS</span>
+                </div>
+                <a href="https://raniaaatif.github.io/SHAHRZAN./" target="_blank" class="text-xs text-gold-light hover:underline">
+                  <i class="fa-brands fa-github mr-1"></i>View on GitHub
+                </a>
+            </div>
+ </section>
+
+ <footer id="contact" class="py-20 border-t border-white/5 bg-black/40">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="font-orbitron text-4xl font-black grad-text mb-10 reveal uppercase">Let's Work Together</h2>
+      <div class="flex justify-center gap-6 mb-12">
+        <a href="mailto:ratef8137@gmail.com" class="w-12 h-12 glass rounded-full flex items-center justify-center hover:text-gold-light transition-all"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/rania-atif-/" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover:text-gold-light transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/Raniaatif" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover:text-gold-light transition-all"><i class="fa-brands fa-github"></i></a>
+        <a href="https://wa.me/201020323198" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover:text-green-500 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+      <p class="text-[10px] text-soft-cream/30 uppercase tracking-[2px]">©<span id="year"></span> Rania Atif Abdulhadi </p>
+    </div>
+ </footer>
+
+ <script>
+   document.getElementById("year").textContent = new Date().getFullYear();
+   const phrases = ["Front End Developer", "UI Developer", "Web Designer"];
+   let pi = 0, ci = 0, del = false;
+   function type() {
+     const cur = phrases[pi];
+     const typedEl = document.getElementById("typed-text");
+     if (!del) {
+       typedEl.textContent = cur.slice(0, ++ci);
+       if (ci === cur.length) { del = true; setTimeout(type, 1500); return; }
+     } else {
+       typedEl.textContent = cur.slice(0, --ci);
+       if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+     }
+     setTimeout(type, del ? 50 : 100);
+   }
+   type();
+   const observer = new IntersectionObserver(entries => {
+     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+   }, { threshold: 0.1 });
+   document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+ </script>
+</body>
+</html>
